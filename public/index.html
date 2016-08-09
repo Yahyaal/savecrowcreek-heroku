@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Save Crow Creek</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.3/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.12.3/mapbox-gl.css' rel='stylesheet'/>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/TestFormCtrl.js"></script>
+    <script type="text/javascript" src="js/SaveCtrl.js"></script>
+
+</head>
+
+<body ng-app='testFormApp' id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container" ng-controller="TestFormCtrl">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">Save Crow Creek</a>
+                <a href ng-click="loadTest()"><span class="glyphicon glyphicon-plus"></span></a> 
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#story">Story</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact1">Residents</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact2">Lawn Care Providers</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="intro-text">
+                
+                <div class="intro-lead-in">Join Our Community To</div>
+                <div class="intro-heading">Save Crow Creek</div>
+                <a href="#contact1" class="page-scroll btn btn-xl">Crow Creek Residents</a>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <a href="#contact2" class="page-scroll btn btn-xl">Lawn Care Providers</a>&nbsp; &nbsp;
+                <div class="intro-summary">Crow Creek is on the State of Oklahoma’s list of impaired waters. We are building a community of people who will work together to revive the creek. There are several easy actions that Crow Creek residents and lawn care providers can take to help the creek.</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Story Section -->
+    <section id="story">
+        <h2 class="section-heading text-center">The Story</h2>
+        <div class="container">
+        The Oklahoma Conservation Commission’s Water Quality Division has designated Crow Creek as its first priority watershed in an urban area and is developing a plan to improve the creek’s water quality, which has degraded over several years. Currently, Crow Creek is listed by the State as an impaired waterbody for both fish and wildlife propagation, dissolved oxygen, and primary body contact – recreation. This means that few fish and benthic macroinvertebrates are found living in the creek, and people should avoid getting in the water. Through its Blue Thumb Water Quality Education and Volunteer Program, the Commission will support volunteers to educate citizens and businesses in and around the watershed on how they can help improve the water quality. There will also be monies available to set up demonstration areas to showcase best management practices for landscaping along the creek banks. This effort will take several years; the degradation didn’t happen overnight, the recovery won’t either. Blue Thumb volunteers have monitored the health of Crow Creek since 1995 by collecting water samples for chemical testing each month, collecting benthic macroinvertebrates twice a year (winter and summer), and assessing the habitat and collecting fish once every five years. The habitat of the exposed creek is fine, but most of the aquatic life is missing from the stream.
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section>
+        <h2 class="section-heading text-center">Map</h2>
+        <div id='menu'>
+            <input id='streets' type='button' class="btn btn-success" name='rtoggle' value='streets'>
+            
+            <input id='emerald' type='button' class="btn btn-success" name='rtoggle' value='emerald'>
+            <input id='bright' type='button' class="btn btn-success" name='rtoggle' value='bright'>
+            <input id='satellite-hybrid' type='button' class="btn btn-success" name='rtoggle' value='satellite'>
+            
+        </div>
+        <div id="map"></div>
+    </section>
+
+    
+    <!-- Contact Crow Creek Residents -->
+    <section id="contact1">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Crow Creek Residents</h2>
+                    <h3 class="section-subheading text-muted">Please Join our mailing list. We will keep you updated with the progress and let you know how you can help</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="https://SaveCrowCreek.us12.list-manage.com/subscribe/post?u=6826e887a3bdfb0720f8c3016&amp;id=8e90cde25e" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="form-group">
+                                    <input type="email" name="EMAIL" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                <div style="position: absolute; left: -5000px;"><input type="text" name="b_6826e887a3bdfb0720f8c3016_8e90cde25e" tabindex="-1" value=""></div>
+                                <button type="submit" class="btn btn-xl">Notify Me</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Lawn Care Provider -->
+    <section id="contact2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Lawn Care Provider</h2>
+                    <h3 class="section-subheading text-muted">Please Join our mailing list. We will keep you updated with the progress and let you know how you can help</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form action="https://SaveCrowCreek.us12.list-manage.com/subscribe/post?u=6826e887a3bdfb0720f8c3016&amp;id=33b0062a1f" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-3">
+                                <div class="form-group">
+                                    <input type="email" name="EMAIL" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6"></div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                                    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6826e887a3bdfb0720f8c3016_33b0062a1f" tabindex="-1" value=""></div>
+                                <button type="submit" class="btn btn-xl">Notify Me</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+    <!-- Mapbox JS -->
+    <script type="text/javascript" src="js/map.js"></script>
+
+</body>
+
+</html>

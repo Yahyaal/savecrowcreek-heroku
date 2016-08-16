@@ -4,7 +4,7 @@ angular.module('testFormApp').controller('TestFormCtrl', function($scope, $http,
 		$http.get('/tests').then(function(response) {
 			$scope.tests = response.data;
 		});
-	};
+	}
 	getTests();
 	
 	$scope.loadTest = function(test) {	

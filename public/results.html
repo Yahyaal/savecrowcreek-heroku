@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <title>Test Results</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/1.3.3/ui-bootstrap-tpls.min.js"></script>
+
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/TestFormCtrl.js"></script>
+    <script type="text/javascript" src="js/SaveCtrl.js"></script>
+
+</head>
+
+<body ng-app='testFormApp' ng-controller="TestFormCtrl" id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand page-scroll" href="index.html">Save Crow Creek</a>
+                 
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                
+                <ul class="nav navbar-nav">
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="views/results.html">Tests</a>
+                    </li>
+                    <li>
+                        <a href ng-click="loadTest()"><span class="glyphicon glyphicon-plus"></span></a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+    </nav>
+    <div class="container" style="padding-top: 100px">
+    	<h3>Reported Tests</h3>
+    </div>
+    <div class="container">
+    <div class="panel panel-success" ng-repeat='test in tests.slice().reverse() | limitTo:10'>
+    	<div class="panel-heading">
+    		<h3 class="panel-title">
+    			{{test.email}}<span class="pull-right">{{test.date | date: 'short'}}</span>
+    		</h3>
+    	</div>
+    	<div class="panel-body">
+    		<label><b>Location: &nbsp</b></label>{{test.location}}<br>
+    		<label><b>pH: </b>&nbsp</label>{{test.ph1}} &nbsp {{test.ph2}}<br>
+    		<label><b>Nitrate: </b>&nbsp</label>{{test.nitrate1}} &nbsp {{test.nitrate2}}<br>
+    		<label><b>Nitrite: </b>&nbsp</label>{{test.nitrite1}} &nbsp {{test.nitrite2}}<br>
+    		<label><b>Amonia: </b>&nbsp</label>{{test.amonia1}} &nbsp {{test.amonia2}}<br>
+    		<label><b>Phosphate: </b>&nbsp</label>{{test.phosphate1}} &nbsp {{test.phosphate2}}<br>
+    		<label><b>Chloride: </b>&nbsp</label>{{test.chloride1}} &nbsp {{test.chloride2}}<br>
+
+    		<label><b>Observations: </b></label>
+    		<p style="white-space: pre-line">{{test.observation}}</p><br>
+    		<label><b>Interventions: </b></label>
+    		<p style="white-space: pre-line">{{test.intervention}}</p><br>
+
+    		<div class="pull-right text-muted"></div>
+    		
+    		<!-- <ul class="list-group">
+    		  <li ng-repeat="comment in thread.comments" class="list-group-item">
+    			  Comment By: <b>{{comment.author}}</b> on {{comment.date | date: 'longDate'}}<br>
+    			  {{comment.body}}
+    		  </li>
+    		</ul>
+    		<p><button class="btn pull-left btn-warning btn-sm" ng-click="addComment(thread)">Add Comment</button></p>
+    	</div>
+        <label><b>{{test.date | date:'short'}}</b></label><br>
+        <label><b>E-mail: </b></label>{{test.email}}<br>
+         -->
+        <!-- <label><b>Photo: </b></label>{{newPost.photo}} -->
+    </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
+</body>

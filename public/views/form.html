@@ -2,12 +2,12 @@
 	<h4 class="modal-title">Test Form<span style="float: right">{{test.date | date:'short'}}</span></h4>
 	<!-- <input type="date" class="form-control" ng-model="test.date"> -->
 </div>
-<div class="modal-body" name='testForm'>	
-	<form class="form-inline form-horizontal">
+<div class="modal-body">	
+	<form class="form-inline form-horizontal" name="testForm">
 		<div class="row">
     		<label class="col-xs-2 control-label">E-mail</label>
     		<div class="col-xs-3">
-        		<input type="email" class="form-control" ng-model="test.email" placeholder="email">
+        		<input type="email" class="form-control" ng-model="test.email" placeholder="email" required>
         	</div>
         </div>
     </form>
@@ -111,5 +111,5 @@
 	</div> -->
 </div>
 <div class="modal-footer">
-    <button class="btn btn-success btn-lg" type="button" ng-click="save()">Submit</button>
+    <button class="btn btn-success btn-lg" type="button" ng-click="save()" ng-disabled="!testForm.$valid">Submit</button>
 </div>
